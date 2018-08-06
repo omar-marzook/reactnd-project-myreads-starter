@@ -43,7 +43,7 @@ class BooksApp extends React.Component {
     }
   }
 
-  softBooks(searchResults, books) {
+  sortBooks(searchResults, books) {
     let booksMap = new Map();
     books.map(book => booksMap.set(book.id, book));
     searchResults.map(book => this.checkKey(booksMap, book));
@@ -60,7 +60,7 @@ class BooksApp extends React.Component {
     });
     BooksAPI.search(query).then(books => {
       if (books !== undefined && books.constructor === Array) {
-        this.softBooks(this.state.searchResult, books);
+        this.sortBooks(this.state.searchResult, books);
       } else {
         this.setState({ books: [] });
       }
@@ -69,7 +69,7 @@ class BooksApp extends React.Component {
 
   render() {
     return <div className='app'>
-    
+
       <Route path='/search' render={({ history }) => <div className='search-books'>
         <div className='search-books-bar'>
           <Link className='close-search' to='/' onClick={() => this.reload()}>
