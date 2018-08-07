@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from "react";
 import './App.css';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import * as BooksAPI from './utils/BooksAPI';
 import Shelves from './Shelves';
 import Book from './Book';
 
-class BooksApp extends React.Component {
+class BooksApp extends Component {
   state = {
     books: [],
     searchResult: [],
