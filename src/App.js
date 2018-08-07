@@ -56,8 +56,9 @@ class BooksApp extends Component {
 
   updateQuery(query) {
     this.setState({
-      query: query.trim()
+      query: query
     });
+
     BooksAPI.search(query).then(books => {
       if (books !== undefined && books.constructor === Array) {
         this.sortBooks(this.state.searchResult, books);

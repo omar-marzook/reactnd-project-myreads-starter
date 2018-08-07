@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Book from './Book';
 
 class Shelves extends Component {
+    
     filterBook(booksArray, key) {
         let newList = [];
         for (let item of booksArray) {
